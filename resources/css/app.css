@@ -1,0 +1,41 @@
+@import './editor.css';
+
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #20201e;
+    background: #fafaf8;
+    font-synthesis: none;
+    --line: #deded8;
+    --muted: #6a6a63;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+button, input, select, textarea { font: inherit; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+button, a { color: inherit; }
+button { cursor: pointer; }
+a { text-decoration: none; }
+:focus-visible { outline: 2px solid #20201e; outline-offset: 4px; }
+.page-width { width: min(1200px, calc(100% - 96px)); margin-inline: auto; }
+.skip-link { position: absolute; top: -60px; padding: 12px; background: #20201e; color: white; }
+.skip-link:focus { top: 8px; z-index: 2; }
+.site-header { height: 94px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+.brand { font-size: 29px; font-weight: 800; letter-spacing: -1.6px; }
+.site-header nav { font-size: 13px; }
+.site-header nav span { margin-left: 16px; font-size: 18px; }
+.introduction { padding: 55px 0 45px; }
+.eyebrow { margin: 0 0 22px; font-size: 10px; font-weight: 600; letter-spacing: 2px; }
+h1 { margin: 0; font-size: clamp(42px, 5.2vw, 70px); font-weight: 600; line-height: .99; letter-spacing: -3.8px; }
+.description { margin: 23px 0 0; font-size: 15px; color: var(--muted); line-height: 1.6; }
+.site-footer { display: flex; justify-content: space-between; gap: 20px; padding: 25px 0 30px; margin-top: 45px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; line-height: 1.6; }
+@media (max-width: 760px) {
+    .page-width { width: calc(100% - 40px); }
+    .site-header { height: 78px; }
+    .brand { font-size: 27px; }
+    .introduction { padding: 42px 0 35px; }
+    h1 { letter-spacing: -2.4px; font-size: clamp(42px, 9vw, 62px); }
+    .description { max-width: 300px; font-size: 14px; }
+    .site-footer { flex-direction: column; gap: 5px; margin-top: 32px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

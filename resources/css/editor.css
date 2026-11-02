@@ -1,0 +1,62 @@
+.editor { display: grid; grid-template-columns: 360px minmax(0, 1fr); border-top: 1px solid var(--line); scroll-margin-top: 24px; }
+.settings { padding-right: 36px; border-right: 1px solid var(--line); }
+.panel-heading { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.panel-heading h2 { margin: 0; font-size: 13px; font-weight: 600; }
+.panel-heading h2 > span { margin-right: 12px; color: var(--muted); font-size: 10px; font-weight: 400; }
+.reset-button { background: none; border: 0; padding: 8px 0 8px 8px; color: var(--muted); font-size: 11px; }
+.reset-button span { margin-left: 7px; font-size: 17px; }
+.reset-button:hover { color: #20201e; }
+.field { margin: 0 0 23px; padding: 0; min-width: 0; border: 0; }
+.field > label, legend, .label-row label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 10px; }
+.label-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.label-row output { color: var(--muted); font-size: 10px; font-variant-numeric: tabular-nums; }
+textarea, select { width: 100%; border: 1px solid var(--line); background: transparent; color: inherit; border-radius: 0; }
+textarea { resize: vertical; padding: 14px; line-height: 1.5; min-height: 116px; max-height: 300px; font-size: 15px; }
+select { padding: 12px; font-size: 12px; min-height: 43px; }
+.hint { font-size: 10px; color: var(--muted); line-height: 1.6; margin: 7px 0 0; }
+input[type='range'] { width: 100%; margin: 6px 0; accent-color: #20201e; cursor: pointer; height: 18px; }
+.color-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.color-control { display: flex; align-items: center; gap: 9px; padding: 8px; border: 1px solid var(--line); }
+input[type='color'] { width: 27px; height: 27px; padding: 0; border: 0; background: transparent; cursor: pointer; flex-shrink: 0; }
+input[type='color']::-webkit-color-swatch-wrapper { padding: 0; }
+input[type='color']::-webkit-color-swatch { border: 1px solid #20201e20; }
+.color-control output { font-family: monospace; font-size: 10px; }
+legend { padding: 0; }
+.segments { display: flex; gap: 5px; }
+.segments label { position: relative; flex: 1; cursor: pointer; }
+.segments input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.segments label > span { display: block; text-align: center; border: 1px solid var(--line); padding: 12px 6px; font-size: 12px; }
+.segments input:checked + span { background: #20201e; color: #fff; border-color: #20201e; }
+.segments input:focus-visible + span { outline: 2px solid #20201e; outline-offset: 3px; }
+.segments label:hover > span { border-color: #20201e; }
+.formats span small { display: block; margin-top: 5px; font-size: 10px; opacity: .7; }
+.format-field { margin-bottom: 0; }
+.preview-panel { padding-left: 36px; min-width: 0; }
+.live-label { font-size: 10px; color: var(--muted); }
+.live-label > span { font-size: 7px; margin-right: 5px; }
+.poster-stage { background: #f0f0ec; padding: 28px; display: grid; place-items: center; }
+#poster-canvas { display: block; width: 100%; max-width: 520px; height: auto; border: 1px solid #20201e12; }
+.preview-footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 20px; }
+.preview-footer p { margin: 0; font-size: 11px; font-variant-numeric: tabular-nums; }
+.preview-footer p span { color: var(--muted); }
+.download-button { border: 1px solid #20201e; background: #20201e; color: #fff; padding: 14px 20px; font-size: 12px; }
+.download-button span { margin-left: 25px; font-size: 17px; }
+.download-button:hover { background: #41413b; }
+.download-button:disabled { opacity: .5; cursor: wait; }
+.preview-hint { margin-top: 14px; max-width: 440px; }
+.status { min-height: 17px; margin: 7px 0 0; font-size: 11px; line-height: 1.5; }
+@media (max-width: 1000px) and (min-width: 761px) {
+    .editor { grid-template-columns: 300px minmax(0, 1fr); }
+    .settings { padding-right: 24px; }
+    .preview-panel { padding-left: 24px; }
+    .poster-stage { padding: 16px; }
+    .preview-footer { align-items: flex-start; flex-direction: column; }
+}
+@media (max-width: 760px) {
+    .editor { grid-template-columns: minmax(0, 1fr); }
+    .settings { padding: 0 0 30px; border-right: 0; border-bottom: 1px solid var(--line); }
+    .preview-panel { padding-left: 0; }
+    .poster-stage { padding: 18px; }
+    .download-button { padding: 13px 15px; }
+    .download-button span { margin-left: 15px; }
+}
